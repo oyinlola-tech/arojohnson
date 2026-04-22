@@ -1,0 +1,16 @@
+{
+  "name": "Aro Johnson Virtual Assistant",
+  "short_name": "Aro Johnson",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f3f5f1",
+  "theme_color": "#1d6a4a",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

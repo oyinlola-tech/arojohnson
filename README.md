@@ -1,75 +1,128 @@
-# Aro Johnson | Virtual Assistant Services
+# Aro Johnson Website
 
-Professional portfolio website for virtual assistant services. Built with clean design, accessibility, and performance in mind.
+Client-facing marketing site and inquiry flow for a virtual assistant business. The project uses a static front end with a serverless contact endpoint that sends structured inquiry emails through Resend.
 
-##  Features
+## What is included
 
-- Responsive design optimized for all devices
-- Light/Dark theme support with automatic system detection
-- Accessible navigation and keyboard support
-- Smooth scroll animations and transitions
-- Performance optimized with lazy loading
-- SEO optimized with structured data
-- Contact form with spam protection
-- Security headers and best practices
+- Refreshed homepage with stronger light and dark themes
+- Two prepared headshot slots:
+  one in the hero section and one in the about section
+- Rewritten copy that sounds more natural and business-ready
+- Reorganized services, case studies, FAQ, and contact flow
+- Updated SVG logo, favicon, and icon sprite
+- Floating WhatsApp shortcut
+- Improved SEO metadata, structured data, robots, sitemap, and manifest
+- Hardened contact form endpoint with stricter validation and email formatting
 
-##  Technologies
+## Project structure
 
-- HTML5 semantic markup
-- Modern CSS3 with custom properties
-- Vanilla JavaScript (no frameworks)
-- Font Awesome icons
-- Google Fonts (Fraunces & Manrope)
-
-##  Project Structure
-
-```
+```text
 Aro/
-├── index.html              # Main landing page
-├── robots.txt              # Search engine directives
-├── README.md               # This file
-├── api/
-│   └── contact.js          # Contact form handler
-└── assets/
-    ├── css/
-    │   └── style.css       # Main stylesheet
-    ├── js/
-    │   └── main.js         # Application logic
-    └── images/
-        ├── case-studies/   # Work examples
-        ├── portfolio/      # Profile photos
-        └── site/           # General site images
+|-- api/
+|   `-- contact.js
+|-- assets/
+|   |-- css/
+|   |   `-- style.css
+|   |-- icons/
+|   |   |-- logo-mark.svg
+|   |   `-- sprite.svg
+|   |-- images/
+|   |   |-- case-studies/
+|   |   |-- portfolio/
+|   |   |   |-- headshot-desk.svg
+|   |   |   `-- headshot-main.svg
+|   |   |-- site/
+|   |   `-- credits.txt
+|   `-- js/
+|       `-- main.js
+|-- .env.example
+|-- favicon.svg
+|-- index.html
+|-- robots.txt
+|-- sitemap.xml
+`-- site.webmanifest
 ```
 
-##  Design System
+## Local setup
 
-| Variable | Light Mode | Dark Mode | Purpose |
-|---|---|---|---|
-| `--primary` | `#b86a34` | `#d89658` | Brand primary color |
-| `--bg` | `#f7f5ef` | `#111519` | Page background |
-| `--text` | `#1d2430` | `#f0ebe0` | Primary text |
-| `--text-soft` | `#5f6777` | `#a1aab5` | Secondary text |
+1. Copy `.env.example` into your real environment configuration.
+2. Set `CONTACT_ALLOWED_ORIGIN` to the live domain.
+3. Set a verified Resend sender in `CONTACT_FROM_EMAIL`.
+4. Deploy the static files and the `api/contact.js` serverless function together.
 
-All colors use single solid values without mixed gradients on surfaces.
+## Environment variables
 
-## Security
+```env
+RESEND_API_KEY=re_xxxxxxxxx
+CONTACT_TO_EMAIL=hello@arojohnson.com
+CONTACT_FROM_EMAIL=Aro Johnson <onboarding@resend.dev>
+CONTACT_ALLOWED_ORIGIN=https://arojohnson.com
+RATE_LIMIT_WINDOW_MINUTES=15
+RATE_LIMIT_MAX=5
+MAX_CONTENT_LENGTH_BYTES=16384
+```
 
-- Honeypot field for spam protection
-- Form validation on client and server
-- CORS configuration
-- XSS protection headers
-- No external dependencies beyond trusted CDNs
+## Replacing the personal photos
 
-## Breakpoints
+Two placeholder SVGs are ready to be swapped with the owner's real images:
 
-- `1100px` – Tablet layout
-- `860px` – Mobile navigation
-- `640px` – Small mobile layout
+- `assets/images/portfolio/headshot-main.svg`
+- `assets/images/portfolio/headshot-desk.svg`
 
-## Deployment
+You can either replace those files directly while keeping the same names, or update the image paths in [index.html](./index.html).
 
-This is a static site that can be deployed to any hosting provider. No build step required.
+## WhatsApp link
 
-## License
+The floating WhatsApp button is currently wired to `#contact` as a safe placeholder because no real WhatsApp number or chat URL was provided in the project files.
 
-All rights reserved. Copyright © 2026 Oluwayemi Oyinlola.
+Before launch, replace this link in [index.html](./index.html) with the owner's real WhatsApp URL, for example:
+
+```text
+https://wa.me/234XXXXXXXXXX?text=Hello%20Aro%2C%20I%20would%20like%20to%20ask%20about%20virtual%20assistant%20support.
+```
+
+## Security notes
+
+The contact endpoint now includes:
+
+- `POST`-only handling with `OPTIONS` support
+- Origin and referer checks
+- JSON-only request handling
+- Content length limits
+- Honeypot and submission timing checks
+- Required consent validation
+- Service allow-listing
+- Input normalization, length limits, and HTML escaping
+- Basic IP and email rate limiting
+- Defensive response headers
+- Cleaner HTML and text email templates for the owner
+
+## SEO notes
+
+The site includes:
+
+- Canonical URL
+- Open Graph and Twitter metadata
+- `ProfessionalService`, `Person`, and `FAQPage` structured data
+- Semantic headings and section structure
+- Sitemap and robots configuration
+- Theme-aware metadata and manifest updates
+
+If the final production domain changes, update all hard-coded `https://arojohnson.com` references in:
+
+- `index.html`
+- `robots.txt`
+- `sitemap.xml`
+- `.env.example`
+
+## Image credits
+
+Free stock images are documented in [assets/images/credits.txt](./assets/images/credits.txt).
+
+## Launch checklist
+
+- Replace both placeholder headshots with real photos
+- Replace the WhatsApp placeholder link with the owner's real chat URL
+- Confirm the live domain is correct everywhere
+- Confirm the Resend sender is verified
+- Test one successful contact form submission in production

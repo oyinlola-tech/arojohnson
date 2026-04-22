@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 900" role="img" aria-labelledby="title desc">
+  <title id="title">Secondary headshot placeholder</title>
+  <desc id="desc">A workspace-style portrait placeholder prepared for the owner's about section headshot.</desc>
+  <rect width="720" height="900" fill="#EEF3EE"/>
+  <rect x="48" y="48" width="624" height="804" rx="42" fill="#FFFFFF" stroke="#D9E4D9" stroke-width="4"/>
+  <rect x="122" y="626" width="476" height="138" rx="24" fill="#E3ECE3"/>
+  <rect x="176" y="662" width="366" height="20" rx="10" fill="#1D6A4A" opacity="0.15"/>
+  <rect x="176" y="700" width="250" height="18" rx="9" fill="#1D6A4A" opacity="0.1"/>
+  <circle cx="364" cy="286" r="108" fill="#DDE7DE"/>
+  <path d="M258 492c18-58 68-112 106-112s88 54 106 112v122H258Z" fill="#B9CABB"/>
+  <path d="M204 756c0-92 72-166 160-166h0c88 0 160 74 160 166v48H204Z" fill="#1D6A4A" opacity="0.14"/>
+  <path d="M250 576h228" fill="none" stroke="#1D6A4A" stroke-linecap="round" stroke-width="14" opacity="0.12"/>
+</svg>

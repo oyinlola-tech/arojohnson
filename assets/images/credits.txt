@@ -27,3 +27,11 @@ Creator: Rodrigo Rodrigues | WOLF ART
 case-studies/travel-planning.jpg
 Source: https://unsplash.com/photos/4TpfD3xrYKw
 Creator: Amy Vann
+
+Custom project assets created locally
+
+favicon.svg
+assets/icons/logo-mark.svg
+assets/icons/sprite.svg
+assets/images/portfolio/headshot-main.svg
+assets/images/portfolio/headshot-desk.svg
