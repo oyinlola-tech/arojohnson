@@ -1,0 +1,29 @@
+Unsplash image credits
+
+site/workspace.jpg
+Source: https://unsplash.com/photos/ieDXimQcLeM
+Creator: Deliberate Directions
+
+case-studies/inbox-management.jpg
+Source: https://unsplash.com/photos/ZI_EpN9_Vng
+Creator: Phil Cln
+
+case-studies/remote-scheduling.jpg
+Source: https://unsplash.com/photos/a8coCLg6O-U
+Creator: Bluestonex
+
+case-studies/customer-support.jpg
+Source: https://unsplash.com/photos/tMsMCtFAh7o
+Creator: Christin Hume
+
+case-studies/social-media.jpg
+Source: https://unsplash.com/photos/B3Jt1fKKAiE
+Creator: Swello
+
+case-studies/crm-operations.jpg
+Source: https://unsplash.com/photos/hpbduAj7wew
+Creator: Rodrigo Rodrigues | WOLF ART
+
+case-studies/travel-planning.jpg
+Source: https://unsplash.com/photos/4TpfD3xrYKw
+Creator: Amy Vann

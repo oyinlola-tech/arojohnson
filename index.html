@@ -3,734 +3,785 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aro Johnson | Professional Virtual Assistant</title>
-    <meta name="description" content="Professional Virtual Assistant helping business owners, entrepreneurs, and startups save time and focus on what matters most.">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Aro Johnson | Premium Virtual Assistant for Founders, Agencies and Executives</title>
+    <meta name="description" content="Aro Johnson provides premium virtual assistant support for founders, consultants, agencies and growing teams, covering inbox management, calendar coordination, client care, operations and research.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#f7f5ef">
+    <meta property="og:title" content="Aro Johnson | Premium Virtual Assistant for Founders, Agencies and Executives">
+    <meta property="og:description" content="Premium virtual assistant support that helps growing businesses reclaim time, improve follow-through and deliver a polished client experience.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/assets/images/site/workspace.jpg">
+    <meta property="og:image:alt" content="Organized premium workspace for virtual assistant services">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Aro Johnson | Premium Virtual Assistant for Founders, Agencies and Executives">
+    <meta name="twitter:description" content="Premium virtual assistant support that helps growing businesses reclaim time, improve follow-through and deliver a polished client experience.">
+    <meta name="twitter:image" content="/assets/images/site/workspace.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#165DFF',
-                        secondary: '#0F172A',
-                        neutral: '#64748B',
-                        light: '#F8FAFC',
-                        accent: '#3B82F6'
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif'],
-                    },
-                }
+        (function () {
+            try {
+                var storedTheme = localStorage.getItem("aro-theme");
+                var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+                var theme = storedTheme || (prefersDark ? "dark" : "light");
+                document.documentElement.setAttribute("data-theme", theme);
+            } catch (error) {
+                document.documentElement.setAttribute("data-theme", "light");
             }
-        }
+        }());
     </script>
 </head>
-<body class="bg-light text-secondary antialiased">
+<body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div class="page-shell">
+        <div class="progress-bar" id="progress-bar" aria-hidden="true"></div>
 
-    <!-- Navigation -->
-    <nav id="navbar" class="nav-sticky fixed w-full z-50 top-0 py-4">
-        <div class="container mx-auto px-4 md:px-6">
-            <div class="glass rounded-2xl px-6 py-4 flex items-center justify-between card-shadow">
-                <a href="#" class="text-xl font-bold text-secondary">Aro Johnson</a>
-                <div class="hidden md:flex items-center gap-8">
-                    <a href="#about" class="text-neutral hover:text-primary transition-colors">About</a>
-                    <a href="#services" class="text-neutral hover:text-primary transition-colors">Services</a>
-                    <a href="#portfolio" class="text-neutral hover:text-primary transition-colors">Portfolio</a>
-                    <a href="#testimonials" class="text-neutral hover:text-primary transition-colors">Testimonials</a>
-                    <a href="#faq" class="text-neutral hover:text-primary transition-colors">FAQ</a>
-                    <a href="#contact" class="bg-primary text-white px-5 py-2.5 rounded-lg font-medium hover:bg-primary/90 transition-colors btn-primary">Contact</a>
-                </div>
-                <button id="mobile-menu-btn" class="md:hidden text-secondary">
-                    <i class="fa fa-bars text-xl"></i>
-                </button>
-            </div>
-        </div>
+        <header class="site-header" id="site-header">
+            <div class="container">
+                <div class="nav-shell">
+                    <a href="#top" class="brand" aria-label="Aro Johnson home">
+                        <span class="brand-mark">AJ</span>
+                        <span>
+                            <strong>Aro Johnson</strong>
+                            <small>Premium Virtual Assistant</small>
+                        </span>
+                    </a>
 
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden mt-2 mx-4">
-            <div class="glass rounded-2xl p-6 card-shadow">
-                <div class="flex flex-col gap-4">
-                    <a href="#about" class="text-neutral hover:text-primary py-2">About</a>
-                    <a href="#services" class="text-neutral hover:text-primary py-2">Services</a>
-                    <a href="#portfolio" class="text-neutral hover:text-primary py-2">Portfolio</a>
-                    <a href="#testimonials" class="text-neutral hover:text-primary py-2">Testimonials</a>
-                    <a href="#faq" class="text-neutral hover:text-primary py-2">FAQ</a>
-                    <a href="#contact" class="bg-primary text-white px-5 py-3 rounded-lg font-medium text-center mt-2 btn-primary">Contact</a>
-                </div>
-            </div>
-        </div>
-    </nav>
+                    <nav class="desktop-nav" aria-label="Primary">
+                        <a href="#about">About</a>
+                        <a href="#services">Services</a>
+                        <a href="#case-studies">Case Studies</a>
+                        <a href="#process">Process</a>
+                        <a href="#faq">FAQ</a>
+                    </nav>
 
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/your-number" target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center card-shadow floating-btn">
-        <i class="fa fa-whatsapp text-2xl"></i>
-    </a>
-
-    <!-- Back to Top Button -->
-    <button id="back-to-top" class="fixed bottom-6 left-6 z-40 bg-secondary text-white w-12 h-12 rounded-full flex items-center justify-center card-shadow opacity-0 invisible transition-all floating-btn">
-        <i class="fa fa-arrow-up"></i>
-    </button>
-
-    <!-- Hero Section -->
-    <section class="pt-32 pb-20 md:pt-40 md:pb-32">
-        <div class="container mx-auto px-4 md:px-6">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="reveal">
-                    <p class="text-primary font-medium mb-3">Virtual Assistant Services</p>
-                    <h1 class="text-[clamp(2.5rem,5vw,4rem)] font-bold leading-[1.1] mb-4">
-                        Hi, I'm Aro Johnson
-                    </h1>
-                    <h2 class="text-[clamp(1.25rem,3vw,1.75rem)] font-medium text-neutral mb-6">
-                        Professional Virtual Assistant
-                    </h2>
-                    <p class="text-neutral text-lg mb-8 max-w-lg text-balance">
-                        Helping busy professionals, entrepreneurs, and business owners reclaim their time by handling administrative tasks with precision, reliability, and excellence.
-                    </p>
-
-                    <div class="flex flex-wrap gap-4 mb-10">
-                        <a href="#contact" class="bg-primary text-white px-8 py-3.5 rounded-lg font-semibold hover:bg-primary/90 transition-colors card-shadow btn-primary">
-                            Hire Me
-                        </a>
-                        <a href="#" class="bg-white text-secondary border border-gray-200 px-8 py-3.5 rounded-lg font-semibold hover:bg-gray-50 transition-colors card-shadow">
-                            Download CV
-                        </a>
-                    </div>
-
-                    <div class="grid grid-cols-3 gap-4">
-                        <div class="bg-white p-4 rounded-xl card-shadow text-center card-shadow-hover">
-                            <p class="text-2xl font-bold text-primary">3+</p>
-                            <p class="text-sm text-neutral">Years Experience</p>
-                        </div>
-                        <div class="bg-white p-4 rounded-xl card-shadow text-center card-shadow-hover">
-                            <p class="text-2xl font-bold text-primary">100+</p>
-                            <p class="text-sm text-neutral">Tasks Completed</p>
-                        </div>
-                        <div class="bg-white p-4 rounded-xl card-shadow text-center card-shadow-hover">
-                            <p class="text-2xl font-bold text-primary">99.9%</p>
-                            <p class="text-sm text-neutral">Client Satisfaction</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="reveal">
-                    <div class="relative">
-                        <div class="absolute inset-0 bg-primary/10 rounded-3xl transform translate-x-4 translate-y-4"></div>
-                        <div class="relative bg-gray-100 rounded-3xl overflow-hidden aspect-[4/5] card-shadow">
-                            <img src="assets/profile.jpg" alt="Aro Johnson Professional Virtual Assistant" class="w-full h-full object-cover" loading="lazy">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-white">
-        <div class="container mx-auto px-4 md:px-6">
-            <div class="text-center mb-16 reveal">
-                <p class="text-primary font-medium mb-2">About Me</p>
-                <h2 class="text-[clamp(1.75rem,3vw,2.5rem)] font-bold mb-4">Your Trusted Virtual Support</h2>
-                <p class="text-neutral max-w-2xl mx-auto">
-                    With over 3 years of experience supporting executives, startups, and busy professionals, I understand the value of time and the importance of reliable support.
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-12 items-center mb-16 reveal">
-                <div>
-                    <div class="bg-gray-100 rounded-2xl overflow-hidden aspect-square card-shadow card-shadow-hover">
-                        <img src="assets/about.jpg" alt="About Aro Johnson" class="w-full h-full object-cover" loading="lazy">
-                    </div>
-                </div>
-                <div>
-                    <h3 class="text-2xl font-bold mb-4">Dedicated to Your Success</h3>
-                    <p class="text-neutral mb-4 leading-relaxed">
-                        I specialize in administrative support, calendar management, email organization, customer service, and all the tasks that keep your business running smoothly.
-                    </p>
-                    <p class="text-neutral mb-4 leading-relaxed">
-                        My approach is built on clear communication, meticulous attention to detail, and proactive problem-solving. When you work with me, you're not just hiring an assistant — you're gaining a reliable partner dedicated to your success.
-                    </p>
-                    <p class="text-neutral leading-relaxed">
-                        I take pride in being organized, responsive, and consistently delivering high-quality work that allows my clients to focus on what they do best.
-                    </p>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 reveal">
-                <div class="bg-light p-5 rounded-xl card-shadow text-center service-card">
-                    <i class="fa fa-clock-o text-primary text-2xl mb-3"></i>
-                    <p class="font-medium">Time Management</p>
-                </div>
-                <div class="bg-light p-5 rounded-xl card-shadow text-center service-card">
-                    <i class="fa fa-check-circle text-primary text-2xl mb-3"></i>
-                    <p class="font-medium">Detail Oriented</p>
-                </div>
-                <div class="bg-light p-5 rounded-xl card-shadow text-center service-card">
-                    <i class="fa fa-life-ring text-primary text-2xl mb-3"></i>
-                    <p class="font-medium">Reliable Support</p>
-                </div>
-                <div class="bg-light p-5 rounded-xl card-shadow text-center service-card">
-                    <i class="fa fa-bolt text-primary text-2xl mb-3"></i>
-                    <p class="font-medium">Fast Response</p>
-                </div>
-                <div class="bg-light p-5 rounded-xl card-shadow text-center service-card">
-                    <i class="fa fa-comments text-primary text-2xl mb-3"></i>
-                    <p class="font-medium">Clear Communication</p>
-                </div>
-                <div class="bg-light p-5 rounded-xl card-shadow text-center service-card">
-                    <i class="fa fa-shield text-primary text-2xl mb-3"></i>
-                    <p class="font-medium">Confidentiality</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="py-20 bg-light">
-        <div class="container mx-auto px-4 md:px-6">
-            <div class="text-center mb-16 reveal">
-                <p class="text-primary font-medium mb-2">Services</p>
-                <h2 class="text-[clamp(1.75rem,3vw,2.5rem)] font-bold mb-4">How I Can Help You</h2>
-                <p class="text-neutral max-w-2xl mx-auto">
-                    Comprehensive virtual assistance services tailored to your specific business needs
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 reveal">
-                <div class="bg-white p-6 rounded-2xl card-shadow service-card">
-                    <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-                        <i class="fa fa-envelope text-primary text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Email Management</h3>
-                    <p class="text-neutral">Organize, filter, and respond to emails professionally. Maintain inbox zero and prioritize important communications.</p>
-                </div>
-
-                <div class="bg-white p-6 rounded-2xl card-shadow service-card">
-                    <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-                        <i class="fa fa-calendar text-primary text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Calendar Management</h3>
-                    <p class="text-neutral">Schedule meetings, manage appointments, avoid conflicts, and send reminders so you never miss an important event.</p>
-                </div>
-
-                <div class="bg-white p-6 rounded-2xl card-shadow service-card">
-                    <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-                        <i class="fa fa-table text-primary text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Data Entry</h3>
-                    <p class="text-neutral">Accurate and efficient data entry, spreadsheet management, database organization, and document preparation.</p>
-                </div>
-
-                <div class="bg-white p-6 rounded-2xl card-shadow service-card">
-                    <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-                        <i class="fa fa-headphones text-primary text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Customer Support</h3>
-                    <p class="text-neutral">Professional customer communication, ticket management, and support handling on your behalf.</p>
-                </div>
-
-                <div class="bg-white p-6 rounded-2xl card-shadow service-card">
-                    <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-                        <i class="fa fa-share-alt text-primary text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Social Media Assistance</h3>
-                    <p class="text-neutral">Content scheduling, engagement monitoring, and basic social media management across platforms.</p>
-                </div>
-
-                <div class="bg-white p-6 rounded-2xl card-shadow service-card">
-                    <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-                        <i class="fa fa-search text-primary text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Internet Research</h3>
-                    <p class="text-neutral">Thorough research, data gathering, report compilation, and information verification for business decisions.</p>
-                </div>
-
-                <div class="bg-white p-6 rounded-2xl card-shadow service-card">
-                    <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-                        <i class="fa fa-plane text-primary text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Travel Booking</h3>
-                    <p class="text-neutral">Complete travel arrangements including flights, accommodation, transportation, and itinerary planning.</p>
-                </div>
-
-                <div class="bg-white p-6 rounded-2xl card-shadow service-card">
-                    <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-                        <i class="fa fa-clock-o text-primary text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Appointment Scheduling</h3>
-                    <p class="text-neutral">Coordinate with clients, schedule appointments, send confirmations, and manage calendar availability effectively.</p>
-                </div>
-
-                <div class="bg-white p-6 rounded-2xl card-shadow service-card">
-                    <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-                        <i class="fa fa-address-book text-primary text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">CRM Management</h3>
-                    <p class="text-neutral">Update customer records, manage leads, track interactions, and maintain your CRM system organized.</p>
-                </div>
-
-                <div class="bg-white p-6 rounded-2xl card-shadow service-card">
-                    <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-                        <i class="fa fa-briefcase text-primary text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Administrative Support</h3>
-                    <p class="text-neutral">General administrative tasks, document preparation, file organization, and all office support activities.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Tools & Skills Section -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-4 md:px-6">
-            <div class="text-center mb-16 reveal">
-                <p class="text-primary font-medium mb-2">Tools & Skills</p>
-                <h2 class="text-[clamp(1.75rem,3vw,2.5rem)] font-bold mb-4">Tools I Work With</h2>
-                <p class="text-neutral max-w-2xl mx-auto">
-                    Proficiency with industry standard tools and platforms to integrate seamlessly with your workflow
-                </p>
-            </div>
-
-            <div class="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-10 gap-4 mb-12 reveal">
-                <div class="bg-light p-4 rounded-xl card-shadow text-center service-card">
-                    <i class="fa fa-google text-primary text-2xl mb-2"></i>
-                    <p class="text-sm font-medium">Google Workspace</p>
-                </div>
-                <div class="bg-light p-4 rounded-xl card-shadow text-center service-card">
-                    <i class="fa fa-windows text-primary text-2xl mb-2"></i>
-                    <p class="text-sm font-medium">Microsoft Office</p>
-                </div>
-                <div class="bg-light p-4 rounded-xl card-shadow text-center service-card">
-                    <i class="fa fa-slack text-primary text-2xl mb-2"></i>
-                    <p class="text-sm font-medium">Slack</p>
-                </div>
-                <div class="bg-light p-4 rounded-xl card-shadow text-center service-card">
-                    <i class="fa fa-video-camera text-primary text-2xl mb-2"></i>
-                    <p class="text-sm font-medium">Zoom</p>
-                </div>
-                <div class="bg-light p-4 rounded-xl card-shadow text-center service-card">
-                    <i class="fa fa-trello text-primary text-2xl mb-2"></i>
-                    <p class="text-sm font-medium">Trello</p>
-                </div>
-                <div class="bg-light p-4 rounded-xl card-shadow text-center service-card">
-                    <i class="fa fa-tasks text-primary text-2xl mb-2"></i>
-                    <p class="text-sm font-medium">Asana</p>
-                </div>
-                <div class="bg-light p-4 rounded-xl card-shadow text-center service-card">
-                    <i class="fa fa-check-square text-primary text-2xl mb-2"></i>
-                    <p class="text-sm font-medium">ClickUp</p>
-                </div>
-                <div class="bg-light p-4 rounded-xl card-shadow text-center service-card">
-                    <i class="fa fa-paint-brush text-primary text-2xl mb-2"></i>
-                    <p class="text-sm font-medium">Canva</p>
-                </div>
-                <div class="bg-light p-4 rounded-xl card-shadow text-center service-card">
-                    <i class="fa fa-hubspot text-primary text-2xl mb-2"></i>
-                    <p class="text-sm font-medium">HubSpot</p>
-                </div>
-                <div class="bg-light p-4 rounded-xl card-shadow text-center service-card">
-                    <i class="fa fa-sticky-note text-primary text-2xl mb-2"></i>
-                    <p class="text-sm font-medium">Notion</p>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 reveal">
-                <div class="bg-primary/5 p-5 rounded-xl text-center">
-                    <h4 class="font-semibold mb-1">Communication</h4>
-                    <p class="text-neutral text-sm">Clear and professional</p>
-                </div>
-                <div class="bg-primary/5 p-5 rounded-xl text-center">
-                    <h4 class="font-semibold mb-1">Organization</h4>
-                    <p class="text-neutral text-sm">Systematic approach</p>
-                </div>
-                <div class="bg-primary/5 p-5 rounded-xl text-center">
-                    <h4 class="font-semibold mb-1">Multitasking</h4>
-                    <p class="text-neutral text-sm">Efficient prioritization</p>
-                </div>
-                <div class="bg-primary/5 p-5 rounded-xl text-center">
-                    <h4 class="font-semibold mb-1">Problem Solving</h4>
-                    <p class="text-neutral text-sm">Proactive solutions</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="py-20 bg-light">
-        <div class="container mx-auto px-4 md:px-6">
-            <div class="text-center mb-16 reveal">
-                <p class="text-primary font-medium mb-2">Portfolio</p>
-                <h2 class="text-[clamp(1.75rem,3vw,2.5rem)] font-bold mb-4">Case Studies</h2>
-                <p class="text-neutral max-w-2xl mx-auto">
-                    Previous projects and measurable results achieved for clients
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 reveal">
-                <div class="bg-white rounded-2xl overflow-hidden card-shadow service-card">
-                    <div class="h-48 bg-gray-100"></div>
-                    <div class="p-6">
-                        <h3 class="text-lg font-semibold mb-2">CEO Inbox Management</h3>
-                        <p class="text-neutral mb-4">Managed daily email communications for startup founder handling over 150 emails daily.</p>
-                        <p class="text-primary font-medium">80% reduction in email response time</p>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-2xl overflow-hidden card-shadow service-card">
-                    <div class="h-48 bg-gray-100"></div>
-                    <div class="p-6">
-                        <h3 class="text-lg font-semibold mb-2">Remote Team Scheduling</h3>
-                        <p class="text-neutral mb-4">Coordinated meetings across 3 time zones for 12 member distributed team.</p>
-                        <p class="text-primary font-medium">Zero scheduling conflicts in 18 months</p>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-2xl overflow-hidden card-shadow service-card">
-                    <div class="h-48 bg-gray-100"></div>
-                    <div class="p-6">
-                        <h3 class="text-lg font-semibold mb-2">Customer Support Optimization</h3>
-                        <p class="text-neutral mb-4">Implemented ticket management system and handled customer inquiries for e-commerce business.</p>
-                        <p class="text-primary font-medium">45% improvement in customer satisfaction</p>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-2xl overflow-hidden card-shadow service-card">
-                    <div class="h-48 bg-gray-100"></div>
-                    <div class="p-6">
-                        <h3 class="text-lg font-semibold mb-2">Social Media Calendar</h3>
-                        <p class="text-neutral mb-4">Organized and scheduled content across 5 platforms for marketing agency.</p>
-                        <p class="text-primary font-medium">Consistent posting 6 days per week</p>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-2xl overflow-hidden card-shadow service-card">
-                    <div class="h-48 bg-gray-100"></div>
-                    <div class="p-6">
-                        <h3 class="text-lg font-semibold mb-2">CRM Data Organization</h3>
-                        <p class="text-neutral mb-4">Cleaned, organized and updated 2000+ client records in HubSpot CRM.</p>
-                        <p class="text-primary font-medium">99.8% data accuracy achieved</p>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-2xl overflow-hidden card-shadow service-card">
-                    <div class="h-48 bg-gray-100"></div>
-                    <div class="p-6">
-                        <h3 class="text-lg font-semibold mb-2">Travel Coordination</h3>
-                        <p class="text-neutral mb-4">Managed complex international travel arrangements for executive team.</p>
-                        <p class="text-primary font-medium">30% average cost reduction on bookings</p>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-2xl overflow-hidden card-shadow service-card">
-                    <div class="h-48 bg-gray-100"></div>
-                    <div class="p-6">
-                        <h3 class="text-lg font-semibold mb-2">Document Preparation</h3>
-                        <p class="text-neutral mb-4">Created and formatted business reports, proposals and presentations.</p>
-                        <p class="text-primary font-medium">500+ documents prepared</p>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-2xl overflow-hidden card-shadow service-card">
-                    <div class="h-48 bg-gray-100"></div>
-                    <div class="p-6">
-                        <h3 class="text-lg font-semibold mb-2">Research Projects</h3>
-                        <p class="text-neutral mb-4">Conducted market research and competitive analysis for business development.</p>
-                        <p class="text-primary font-medium">Detailed reports delivered on schedule</p>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-2xl overflow-hidden card-shadow service-card">
-                    <div class="h-48 bg-gray-100"></div>
-                    <div class="p-6">
-                        <h3 class="text-lg font-semibold mb-2">Database Management</h3>
-                        <p class="text-neutral mb-4">Maintained and updated company databases with regular quality checks.</p>
-                        <p class="text-primary font-medium">Zero data loss incidents</p>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-2xl overflow-hidden card-shadow service-card">
-                    <div class="h-48 bg-gray-100"></div>
-                    <div class="p-6">
-                        <h3 class="text-lg font-semibold mb-2">Event Planning Support</h3>
-                        <p class="text-neutral mb-4">Coordinated logistics for virtual and hybrid corporate events.</p>
-                        <p class="text-primary font-medium">Events with up to 300 attendees</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="py-20 bg-white">
-        <div class="container mx-auto px-4 md:px-6">
-            <div class="text-center mb-16 reveal">
-                <p class="text-primary font-medium mb-2">Testimonials</p>
-                <h2 class="text-[clamp(1.75rem,3vw,2.5rem)] font-bold mb-4">What Clients Say</h2>
-                <p class="text-neutral max-w-2xl mx-auto">
-                    Feedback from business owners and professionals I've supported
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-6 reveal">
-                <div class="bg-light p-6 rounded-2xl card-shadow card-shadow-hover">
-                    <div class="flex mb-4">
-                        <i class="fa fa-star text-yellow-500"></i>
-                        <i class="fa fa-star text-yellow-500"></i>
-                        <i class="fa fa-star text-yellow-500"></i>
-                        <i class="fa fa-star text-yellow-500"></i>
-                        <i class="fa fa-star text-yellow-500"></i>
-                    </div>
-                    <p class="text-neutral mb-4 italic">Aro is highly organized and dependable. Working with her has completely transformed how I manage my time.</p>
-                    <div class="flex items-center">
-                        <div class="w-10 h-10 bg-primary/20 rounded-full mr-3"></div>
-                        <div>
-                            <p class="font-medium">Michael Chen</p>
-                            <p class="text-neutral text-sm">Startup Founder</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-light p-6 rounded-2xl card-shadow card-shadow-hover">
-                    <div class="flex mb-4">
-                        <i class="fa fa-star text-yellow-500"></i>
-                        <i class="fa fa-star text-yellow-500"></i>
-                        <i class="fa fa-star text-yellow-500"></i>
-                        <i class="fa fa-star text-yellow-500"></i>
-                        <i class="fa fa-star text-yellow-500"></i>
-                    </div>
-                    <p class="text-neutral mb-4 italic">Excellent communication and quick turnaround. Professional in every interaction.</p>
-                    <div class="flex items-center">
-                        <div class="w-10 h-10 bg-primary/20 rounded-full mr-3"></div>
-                        <div>
-                            <p class="font-medium">Sarah Williams</p>
-                            <p class="text-neutral text-sm">Business Consultant</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-light p-6 rounded-2xl card-shadow card-shadow-hover">
-                    <div class="flex mb-4">
-                        <i class="fa fa-star text-yellow-500"></i>
-                        <i class="fa fa-star text-yellow-500"></i>
-                        <i class="fa fa-star text-yellow-500"></i>
-                        <i class="fa fa-star text-yellow-500"></i>
-                        <i class="fa fa-star text-yellow-500"></i>
-                    </div>
-                    <p class="text-neutral mb-4 italic">A valuable support system for our business. Highly recommend to any busy professional.</p>
-                    <div class="flex items-center">
-                        <div class="w-10 h-10 bg-primary/20 rounded-full mr-3"></div>
-                        <div>
-                            <p class="font-medium">David Park</p>
-                            <p class="text-neutral text-sm">Agency Owner</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section id="faq" class="py-20 bg-light">
-        <div class="container mx-auto px-4 md:px-6">
-            <div class="text-center mb-16 reveal">
-                <p class="text-primary font-medium mb-2">FAQ</p>
-                <h2 class="text-[clamp(1.75rem,3vw,2.5rem)] font-bold mb-4">Frequently Asked Questions</h2>
-                <p class="text-neutral max-w-2xl mx-auto">
-                    Common questions about working together and virtual assistance services
-                </p>
-            </div>
-
-            <div class="max-w-3xl mx-auto reveal">
-                <div class="space-y-4">
-                    <div class="bg-white rounded-xl card-shadow p-6 faq-item">
-                        <h3 class="font-semibold mb-2">What tasks can you help with?</h3>
-                        <p class="text-neutral">I can assist with almost any administrative task including email management, calendar scheduling, data entry, customer support, research, travel arrangements, document preparation, social media management, CRM updates, and general office support. I'm also happy to discuss custom requirements for your specific business needs.</p>
-                    </div>
-
-                    <div class="bg-white rounded-xl card-shadow p-6 faq-item">
-                        <h3 class="font-semibold mb-2">What are your working hours?</h3>
-                        <p class="text-neutral">I work standard business hours Monday to Friday. However, I can be flexible for urgent matters and adjust availability based on client time zones. Response time is typically within 2 hours during working hours. For after-hours urgent matters, arrangements can be made in advance.</p>
-                    </div>
-
-                    <div class="bg-white rounded-xl card-shadow p-6 faq-item">
-                        <h3 class="font-semibold mb-2">How do we communicate?</h3>
-                        <p class="text-neutral">Communication can happen through your preferred channels including email, Slack, Microsoft Teams, Zoom, WhatsApp, or phone calls. We will establish regular check-in schedules that work best for you. Daily updates can be provided as needed.</p>
-                    </div>
-
-                    <div class="bg-white rounded-xl card-shadow p-6 faq-item">
-                        <h3 class="font-semibold mb-2">Can I customize a package?</h3>
-                        <p class="text-neutral">Yes, all packages are fully customizable based on your requirements. I offer hourly rates, part-time, and full-time arrangements. We can start with a trial period to assess your needs before committing to a longer-term arrangement.</p>
-                    </div>
-
-                    <div class="bg-white rounded-xl card-shadow p-6 faq-item">
-                        <h3 class="font-semibold mb-2">How do I get started?</h3>
-                        <p class="text-neutral">Simply reach out through the contact form, email, or WhatsApp. We'll schedule a free consultation call to discuss your specific needs, understand your business, and create a personalized plan. No obligation until you decide to proceed.</p>
-                    </div>
-
-                    <div class="bg-white rounded-xl card-shadow p-6 faq-item">
-                        <h3 class="font-semibold mb-2">What payment methods do you accept?</h3>
-                        <p class="text-neutral">I accept bank transfers, PayPal, Wise, and major credit cards. Invoicing is typically done weekly or monthly depending on our agreement. Payment terms are net-7 for new clients, with flexible arrangements for established ongoing partnerships.</p>
-                    </div>
-
-                    <div class="bg-white rounded-xl card-shadow p-6 faq-item">
-                        <h3 class="font-semibold mb-2">Is my business information secure?</h3>
-                        <p class="text-neutral">Absolutely. Confidentiality is a core principle of my service. All client information is treated as strictly confidential. I use secure tools and follow best practices for data protection. Non-disclosure agreements can be provided upon request.</p>
-                    </div>
-
-                    <div class="bg-white rounded-xl card-shadow p-6 faq-item">
-                        <h3 class="font-semibold mb-2">Do you work with clients internationally?</h3>
-                        <p class="text-neutral">Yes, I work with clients across different time zones globally. I have experience supporting businesses in North America, Europe, Asia, and Australia. Time zone differences are carefully managed to ensure smooth collaboration.</p>
-                    </div>
-
-                    <div class="bg-white rounded-xl card-shadow p-6 faq-item">
-                        <h3 class="font-semibold mb-2">What if I need to change tasks?</h3>
-                        <p class="text-neutral">Flexibility is one of the key benefits of working with a virtual assistant. You can change tasks, adjust priorities, and modify requirements at any time. I adapt to your changing business needs without extra charges for routine changes.</p>
-                    </div>
-
-                    <div class="bg-white rounded-xl card-shadow p-6 faq-item">
-                        <h3 class="font-semibold mb-2">Can you handle urgent tasks?</h3>
-                        <p class="text-neutral">Yes, urgent requests can usually be accommodated. For time-sensitive tasks, please indicate urgency when submitting the request. Emergency outside-hours support can be arranged for existing clients with prior notice.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-white">
-        <div class="container mx-auto px-4 md:px-6">
-            <div class="text-center mb-16 reveal">
-                <p class="text-primary font-medium mb-2">Contact</p>
-                <h2 class="text-[clamp(1.75rem,3vw,2.5rem)] font-bold mb-4">Let's Work Together</h2>
-                <p class="text-neutral max-w-2xl mx-auto">
-                    Ready to reclaim your time? Get in touch and let's discuss how I can support your business
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto reveal">
-                <div>
-                    <form class="space-y-5">
-                        <div>
-                            <label class="block font-medium mb-2">Full Name</label>
-                            <input type="text" class="form-input w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:outline-none transition-colors" placeholder="Your name">
-                        </div>
-                        <div>
-                            <label class="block font-medium mb-2">Email Address</label>
-                            <input type="email" class="form-input w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:outline-none transition-colors" placeholder="your@email.com">
-                        </div>
-                        <div>
-                            <label class="block font-medium mb-2">Project Details</label>
-                            <textarea rows="5" class="form-input w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:outline-none transition-colors resize-none" placeholder="Tell me about your needs and how I can help..."></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-primary text-white px-6 py-3.5 rounded-lg font-semibold hover:bg-primary/90 transition-colors card-shadow btn-primary">
-                            Send Message
+                    <div class="nav-actions">
+                        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
+                            <span class="theme-toggle__icon" aria-hidden="true">
+                                <i class="fa fa-moon-o"></i>
+                            </span>
+                            <span class="theme-toggle__label">Dark</span>
                         </button>
-                    </form>
+                        <a class="button button--primary desktop-cta" href="#contact">Book a Discovery Call</a>
+                        <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
                 </div>
 
-                <div class="space-y-6">
-                    <div>
-                        <h3 class="text-xl font-semibold mb-4">Contact Information</h3>
-                        <div class="space-y-4">
-                            <a href="https://wa.me/your-number" target="_blank" class="flex items-center p-4 bg-light rounded-xl card-shadow contact-item">
-                                <div class="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center mr-4">
-                                    <i class="fa fa-whatsapp text-white"></i>
-                                </div>
-                                <div>
-                                    <p class="font-medium">WhatsApp</p>
-                                    <p class="text-neutral text-sm">Direct message for quick response</p>
-                                </div>
-                            </a>
+                <div class="mobile-menu" id="mobile-menu" hidden>
+                    <nav class="mobile-nav" aria-label="Mobile">
+                        <a href="#about">About</a>
+                        <a href="#services">Services</a>
+                        <a href="#case-studies">Case Studies</a>
+                        <a href="#process">Process</a>
+                        <a href="#faq">FAQ</a>
+                        <a class="button button--primary" href="#contact">Book a Discovery Call</a>
+                    </nav>
+                </div>
+            </div>
+        </header>
 
-                            <a href="mailto:hello@arojohnson.com" class="flex items-center p-4 bg-light rounded-xl card-shadow contact-item">
-                                <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-4">
-                                    <i class="fa fa-envelope text-white"></i>
-                                </div>
-                                <div>
-                                    <p class="font-medium">Email</p>
-                                    <p class="text-neutral text-sm">hello@arojohnson.com</p>
-                                </div>
-                            </a>
+        <main id="main-content">
+            <section class="hero section" id="top">
+                <div class="container hero-grid">
+                    <div class="hero-copy reveal">
+                        <p class="eyebrow">Premium virtual assistant support for busy leaders</p>
+                        <h1>Structured support that gives your week back and makes your business feel easier to run.</h1>
+                        <p class="hero-text">
+                            I help founders, agencies, coaches and executives stay on top of inboxes, schedules, client communication,
+                            follow-ups, research and admin operations with the polish of an in-house right hand.
+                        </p>
 
-                            <a href="https://linkedin.com/in/arojohnson" target="_blank" class="flex items-center p-4 bg-light rounded-xl card-shadow contact-item">
-                                <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center mr-4">
-                                    <i class="fa fa-linkedin text-white"></i>
-                                </div>
-                                <div>
-                                    <p class="font-medium">LinkedIn</p>
-                                    <p class="text-neutral text-sm">Professional profile</p>
-                                </div>
-                            </a>
+                        <div class="hero-actions">
+                            <a class="button button--primary" href="#contact">Start with a strategy call</a>
+                            <a class="button button--secondary" href="#case-studies">See client results</a>
+                        </div>
 
-                            <a href="https://instagram.com/arojohnson" target="_blank" class="flex items-center p-4 bg-light rounded-xl card-shadow contact-item">
-                                <div class="w-10 h-10 bg-pink-500 rounded-lg flex items-center justify-center mr-4">
-                                    <i class="fa fa-instagram text-white"></i>
+                        <div class="hero-chips" aria-label="Key support areas">
+                            <span>Inbox and calendar management</span>
+                            <span>Client support and follow-up</span>
+                            <span>Research, reporting and admin</span>
+                        </div>
+
+                        <div class="stats-grid" aria-label="Business impact">
+                            <article class="stat-card">
+                                <strong data-counter="3">3+</strong>
+                                <span>Years of remote support experience</span>
+                            </article>
+                            <article class="stat-card">
+                                <strong data-counter="150">150+</strong>
+                                <span>Weekly tasks streamlined across client accounts</span>
+                            </article>
+                            <article class="stat-card">
+                                <strong data-counter="98">98%</strong>
+                                <span>On-time task delivery across recurring workflows</span>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="hero-panel reveal">
+                        <div class="hero-card">
+                            <div class="hero-card__top">
+                                <span class="eyebrow">Inside the support experience</span>
+                                <p>Calm systems, proactive communication and clean execution that helps you look organized at every touchpoint.</p>
+                            </div>
+
+                            <div class="workspace-frame">
+                                <img src="assets/images/site/workspace.jpg" alt="Minimal organized workspace for premium virtual assistant operations" width="1400" height="933">
+                                <div class="floating-note floating-note--left">
+                                    <span>Weekly planning</span>
+                                    <strong>Priority board refreshed every Monday</strong>
                                 </div>
-                                <div>
-                                    <p class="font-medium">Instagram</p>
-                                    <p class="text-neutral text-sm">Follow for updates</p>
+                                <div class="floating-note floating-note--right">
+                                    <span>Client experience</span>
+                                    <strong>Fast replies, cleaner handoffs, smoother follow-through</strong>
                                 </div>
+                            </div>
+
+                            <div class="hero-matrix">
+                                <div class="matrix-card">
+                                    <small>Typical wins</small>
+                                    <strong>Fewer missed follow-ups</strong>
+                                    <p>Better visibility across tasks, requests and deadlines.</p>
+                                </div>
+                                <div class="matrix-card">
+                                    <small>Support style</small>
+                                    <strong>Proactive and discreet</strong>
+                                    <p>Reliable communication without adding noise to your day.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="trust-band" aria-label="Ideal clients">
+                <div class="container trust-band__grid">
+                    <span>Built for founders</span>
+                    <span>Designed for agencies</span>
+                    <span>Trusted by consultants</span>
+                    <span>Flexible across time zones</span>
+                    <span>Detailed enough for executive support</span>
+                </div>
+            </section>
+
+            <section class="section section--surface" id="about">
+                <div class="container section-grid section-grid--about">
+                    <div class="section-intro reveal">
+                        <p class="eyebrow">About Aro Johnson</p>
+                        <h2>Support that feels thoughtful, polished and genuinely dependable.</h2>
+                        <p>
+                            The best virtual assistance does more than complete tasks. It improves rhythm, protects focus,
+                            reduces mental clutter and keeps your business moving even when your schedule is packed.
+                        </p>
+                        <p>
+                            I bring a calm operational style, sharp attention to detail and a high standard for professionalism.
+                            That means cleaner inboxes, smoother scheduling, stronger client communication and more confidence that
+                            the important details are being handled properly.
+                        </p>
+                    </div>
+
+                    <div class="value-stack reveal">
+                        <article class="value-card">
+                            <span class="value-card__icon"><i class="fa fa-shield"></i></span>
+                            <div>
+                                <h3>Trusted with sensitive work</h3>
+                                <p>Confidential information, executive calendars and client communication are handled with care and discretion.</p>
+                            </div>
+                        </article>
+                        <article class="value-card">
+                            <span class="value-card__icon"><i class="fa fa-bolt"></i></span>
+                            <div>
+                                <h3>Fast without feeling rushed</h3>
+                                <p>Urgent tasks get momentum while recurring admin is documented and delivered consistently.</p>
+                            </div>
+                        </article>
+                        <article class="value-card">
+                            <span class="value-card__icon"><i class="fa fa-comments"></i></span>
+                            <div>
+                                <h3>Clear communication</h3>
+                                <p>You get thoughtful updates, fewer back-and-forth loops and support that fits your preferred workflow.</p>
+                            </div>
+                        </article>
+                        <article class="value-card">
+                            <span class="value-card__icon"><i class="fa fa-line-chart"></i></span>
+                            <div>
+                                <h3>Focused on outcomes</h3>
+                                <p>The goal is not just to stay busy. It is to create more capacity, better consistency and stronger delivery.</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="services">
+                <div class="container">
+                    <div class="section-heading reveal">
+                        <p class="eyebrow">Services</p>
+                        <h2>High-value virtual assistant services that keep operations moving.</h2>
+                        <p>
+                            Each engagement is shaped around the tasks that steal the most time from your leadership, delivery or client-facing work.
+                        </p>
+                    </div>
+
+                    <div class="service-grid reveal">
+                        <article class="service-card">
+                            <div class="service-card__icon"><i class="fa fa-envelope-o"></i></div>
+                            <h3>Inbox and communication management</h3>
+                            <p>Inbox triage, drafting replies, follow-up tracking, message categorization and cleaner day-to-day communication flow.</p>
+                        </article>
+                        <article class="service-card">
+                            <div class="service-card__icon"><i class="fa fa-calendar"></i></div>
+                            <h3>Calendar and meeting coordination</h3>
+                            <p>Scheduling, rescheduling, reminders, time-zone coordination, agenda prep and meeting logistics without the chaos.</p>
+                        </article>
+                        <article class="service-card">
+                            <div class="service-card__icon"><i class="fa fa-headphones"></i></div>
+                            <h3>Client care and customer support</h3>
+                            <p>Warm, professional responses for leads, clients or customers across email, chat platforms and support workflows.</p>
+                        </article>
+                        <article class="service-card">
+                            <div class="service-card__icon"><i class="fa fa-folder-open-o"></i></div>
+                            <h3>Administrative operations</h3>
+                            <p>Document formatting, data entry, CRM updates, file organization, SOP cleanup and recurring admin task management.</p>
+                        </article>
+                        <article class="service-card">
+                            <div class="service-card__icon"><i class="fa fa-search"></i></div>
+                            <h3>Research and reporting</h3>
+                            <p>Market research, competitor scans, lead sourcing, travel research and structured reports you can actually use.</p>
+                        </article>
+                        <article class="service-card">
+                            <div class="service-card__icon"><i class="fa fa-share-alt"></i></div>
+                            <h3>Content and social coordination</h3>
+                            <p>Scheduling content, repurposing assets, tracking approvals and keeping marketing calendars organized across channels.</p>
+                        </article>
+                    </div>
+
+                    <div class="delegate-panel reveal">
+                        <div>
+                            <p class="eyebrow">What you can delegate right away</p>
+                            <h3>Move the repetitive work off your plate without losing visibility.</h3>
+                        </div>
+                        <ul class="delegate-list">
+                            <li>Daily inbox sorting, reply drafting and follow-up reminders</li>
+                            <li>Meeting scheduling, reminders and calendar hygiene</li>
+                            <li>Client onboarding prep, CRM updates and file organization</li>
+                            <li>Research, spreadsheet cleanup and report formatting</li>
+                            <li>Support queue responses and recurring admin operations</li>
+                            <li>Travel planning, itinerary preparation and logistics support</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section section--surface" id="case-studies">
+                <div class="container">
+                    <div class="section-heading reveal">
+                        <p class="eyebrow">Case studies</p>
+                        <h2>Proof of work that feels relevant, practical and measurable.</h2>
+                        <p>
+                            These examples show the kind of detail-oriented support that helps businesses respond faster, stay organized and operate more smoothly.
+                        </p>
+                    </div>
+
+                    <div class="case-study-grid reveal">
+                        <article class="case-card">
+                            <div class="case-card__image">
+                                <img src="assets/images/case-studies/inbox-management.jpg" alt="Laptop workspace representing executive inbox management support" width="1400" height="933" loading="lazy">
+                            </div>
+                            <div class="case-card__body">
+                                <span class="case-card__tag">Executive support</span>
+                                <h3>Founder inbox reset and follow-up system</h3>
+                                <p>Managed a high-volume founder inbox, introduced smarter labels, drafted routine replies and surfaced the messages that needed executive attention.</p>
+                                <div class="case-card__meta">
+                                    <span>150+ emails handled daily</span>
+                                    <strong>Response time reduced by 80%</strong>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="case-card">
+                            <div class="case-card__image">
+                                <img src="assets/images/case-studies/remote-scheduling.jpg" alt="Video conference screen representing remote team scheduling coordination" width="1400" height="934" loading="lazy">
+                            </div>
+                            <div class="case-card__body">
+                                <span class="case-card__tag">Calendar operations</span>
+                                <h3>Remote team scheduling across multiple time zones</h3>
+                                <p>Coordinated recurring check-ins, client calls and planning sessions for a distributed team while keeping calendars clean and conflict-free.</p>
+                                <div class="case-card__meta">
+                                    <span>12-person distributed team</span>
+                                    <strong>Zero scheduling conflicts over 18 months</strong>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="case-card">
+                            <div class="case-card__image">
+                                <img src="assets/images/case-studies/customer-support.jpg" alt="Support professional with headphones handling customer communication" width="1400" height="933" loading="lazy">
+                            </div>
+                            <div class="case-card__body">
+                                <span class="case-card__tag">Client experience</span>
+                                <h3>Customer support cleanup for an online service business</h3>
+                                <p>Handled support messages, improved response consistency and created a cleaner handoff system so urgent requests stopped falling through the cracks.</p>
+                                <div class="case-card__meta">
+                                    <span>Daily customer-facing communication</span>
+                                    <strong>45% lift in satisfaction scores</strong>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="case-card">
+                            <div class="case-card__image">
+                                <img src="assets/images/case-studies/social-media.jpg" alt="Content calendar and social media planning desk setup" width="1400" height="933" loading="lazy">
+                            </div>
+                            <div class="case-card__body">
+                                <span class="case-card__tag">Marketing support</span>
+                                <h3>Social content calendar and publishing support</h3>
+                                <p>Organized campaign assets, scheduled approved content and kept platform publishing aligned with a weekly and monthly content plan.</p>
+                                <div class="case-card__meta">
+                                    <span>5 platforms managed each week</span>
+                                    <strong>Consistent 6-day publishing cadence</strong>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="case-card">
+                            <div class="case-card__image">
+                                <img src="assets/images/case-studies/crm-operations.jpg" alt="Spreadsheet and analytics workspace representing CRM operations cleanup" width="1400" height="934" loading="lazy">
+                            </div>
+                            <div class="case-card__body">
+                                <span class="case-card__tag">Admin systems</span>
+                                <h3>CRM cleanup and reporting for a growth-focused team</h3>
+                                <p>Updated records, standardized fields, removed duplicates and improved internal visibility so the sales and delivery teams had better data to work from.</p>
+                                <div class="case-card__meta">
+                                    <span>2,000+ records cleaned and structured</span>
+                                    <strong>99.8% data accuracy after audit</strong>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="case-card">
+                            <div class="case-card__image">
+                                <img src="assets/images/case-studies/travel-planning.jpg" alt="Travel planning flat lay with maps and passport for executive itinerary support" width="1400" height="933" loading="lazy">
+                            </div>
+                            <div class="case-card__body">
+                                <span class="case-card__tag">Travel coordination</span>
+                                <h3>Executive travel research and itinerary coordination</h3>
+                                <p>Prepared travel options, organized confirmations, mapped itineraries and built easy-to-follow trip details for a busy leadership team.</p>
+                                <div class="case-card__meta">
+                                    <span>International and multi-stop planning</span>
+                                    <strong>30% average booking cost reduction</strong>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="process">
+                <div class="container">
+                    <div class="section-heading reveal">
+                        <p class="eyebrow">Process</p>
+                        <h2>A simple onboarding flow that gets support in motion quickly.</h2>
+                        <p>
+                            The process is lightweight, strategic and designed to help us start with the tasks that create the fastest relief.
+                        </p>
+                    </div>
+
+                    <div class="process-grid reveal">
+                        <article class="process-card">
+                            <span>01</span>
+                            <h3>Discovery</h3>
+                            <p>We clarify your bottlenecks, recurring admin load, current tools and the outcomes you care about most.</p>
+                        </article>
+                        <article class="process-card">
+                            <span>02</span>
+                            <h3>Prioritization</h3>
+                            <p>I identify the highest-impact tasks to delegate first, then map the communication rhythm that suits your workflow.</p>
+                        </article>
+                        <article class="process-card">
+                            <span>03</span>
+                            <h3>Execution</h3>
+                            <p>Work begins with clear ownership, organized tracking and proactive updates so nothing important gets lost.</p>
+                        </article>
+                        <article class="process-card">
+                            <span>04</span>
+                            <h3>Optimization</h3>
+                            <p>We refine the support system over time, document smoother processes and make recurring work easier to maintain.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section section--surface">
+                <div class="container stack-grid">
+                    <div class="section-intro reveal">
+                        <p class="eyebrow">Tools and workflow</p>
+                        <h2>Comfortable inside the platforms most modern teams already use.</h2>
+                        <p>
+                            I work comfortably across communication, scheduling, documentation and task management tools so support can fit your current stack.
+                        </p>
+                    </div>
+
+                    <div class="tool-cloud reveal" aria-label="Platforms and tools">
+                        <span>Google Workspace</span>
+                        <span>Microsoft 365</span>
+                        <span>Slack</span>
+                        <span>Zoom</span>
+                        <span>Notion</span>
+                        <span>Asana</span>
+                        <span>ClickUp</span>
+                        <span>Trello</span>
+                        <span>HubSpot</span>
+                        <span>Canva</span>
+                        <span>Calendly</span>
+                        <span>Chat support tools</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container testimonial-layout">
+                    <div class="section-intro reveal">
+                        <p class="eyebrow">Client feedback</p>
+                        <h2>Calm support, strong communication and dependable follow-through.</h2>
+                        <p>
+                            Great assistant support should reduce stress, improve professionalism and give clients a better experience at the same time.
+                        </p>
+                    </div>
+
+                    <div class="testimonial-grid reveal">
+                        <article class="testimonial-card">
+                            <div class="stars" aria-label="Five star review">
+                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                            </div>
+                            <p>"Aro brought structure to my inbox and calendar almost immediately. I felt less reactive within the first week."</p>
+                            <strong>Michael C.</strong>
+                            <span>Startup founder</span>
+                        </article>
+                        <article class="testimonial-card">
+                            <div class="stars" aria-label="Five star review">
+                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                            </div>
+                            <p>"The communication is polished, deadlines are respected and the support feels genuinely thoughtful, not generic."</p>
+                            <strong>Sarah W.</strong>
+                            <span>Consultant and coach</span>
+                        </article>
+                        <article class="testimonial-card">
+                            <div class="stars" aria-label="Five star review">
+                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                            </div>
+                            <p>"Our client experience improved because someone was finally keeping the details organized and moving forward."</p>
+                            <strong>David P.</strong>
+                            <span>Agency owner</span>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section section--surface" id="faq">
+                <div class="container faq-layout">
+                    <div class="section-intro reveal">
+                        <p class="eyebrow">Frequently asked questions</p>
+                        <h2>Everything clients usually want to know before getting started.</h2>
+                        <p>
+                            If you want premium support that feels flexible, organized and detail-driven, these answers should give you a clear picture of how we can work together.
+                        </p>
+                    </div>
+
+                    <div class="faq-list reveal">
+                        <article class="faq-item">
+                            <button class="faq-trigger" type="button" aria-expanded="false">
+                                <span>What kind of tasks can I delegate first?</span>
+                                <i class="fa fa-plus" aria-hidden="true"></i>
+                            </button>
+                            <div class="faq-content" hidden>
+                                <p>Most clients start with inbox triage, calendar management, follow-ups, customer communication, document formatting, CRM updates, reporting and recurring admin work that steals attention from higher-value priorities.</p>
+                            </div>
+                        </article>
+
+                        <article class="faq-item">
+                            <button class="faq-trigger" type="button" aria-expanded="false">
+                                <span>Do you work with international clients?</span>
+                                <i class="fa fa-plus" aria-hidden="true"></i>
+                            </button>
+                            <div class="faq-content" hidden>
+                                <p>Yes. Support is remote and flexible across time zones. Communication rhythms, response windows and recurring check-ins can be adapted to suit your location and operating hours.</p>
+                            </div>
+                        </article>
+
+                        <article class="faq-item">
+                            <button class="faq-trigger" type="button" aria-expanded="false">
+                                <span>How do you keep communication organized?</span>
+                                <i class="fa fa-plus" aria-hidden="true"></i>
+                            </button>
+                            <div class="faq-content" hidden>
+                                <p>We align on preferred channels, recurring updates and escalation rules at the start. That keeps communication clear, reduces unnecessary pings and ensures urgent work is surfaced quickly.</p>
+                            </div>
+                        </article>
+
+                        <article class="faq-item">
+                            <button class="faq-trigger" type="button" aria-expanded="false">
+                                <span>Can support be customized for my business?</span>
+                                <i class="fa fa-plus" aria-hidden="true"></i>
+                            </button>
+                            <div class="faq-content" hidden>
+                                <p>Absolutely. Support can be tailored around executive assistance, client support, admin operations, marketing coordination, research, reporting or a blended workflow that matches your current needs.</p>
+                            </div>
+                        </article>
+
+                        <article class="faq-item">
+                            <button class="faq-trigger" type="button" aria-expanded="false">
+                                <span>Is my business information kept confidential?</span>
+                                <i class="fa fa-plus" aria-hidden="true"></i>
+                            </button>
+                            <div class="faq-content" hidden>
+                                <p>Yes. Confidentiality, discretion and organized handling of sensitive information are core parts of the service. If required, non-disclosure agreements can be part of the onboarding process.</p>
+                            </div>
+                        </article>
+
+                        <article class="faq-item">
+                            <button class="faq-trigger" type="button" aria-expanded="false">
+                                <span>How quickly can we begin?</span>
+                                <i class="fa fa-plus" aria-hidden="true"></i>
+                            </button>
+                            <div class="faq-content" hidden>
+                                <p>Once scope, priorities and communication channels are agreed, support can usually begin quickly. The first phase is focused on creating relief fast and building a repeatable rhythm from there.</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section contact-section" id="contact">
+                <div class="container contact-grid">
+                    <div class="section-intro reveal">
+                        <p class="eyebrow">Contact</p>
+                        <h2>Ready for premium support that actually reduces your mental load?</h2>
+                        <p>
+                            Share what is slowing you down, where your operations feel messy, or which tasks you want off your plate first.
+                            I will use that context to suggest the best support starting point.
+                        </p>
+
+                        <div class="contact-points">
+                            <article>
+                                <strong>Response style</strong>
+                                <p>Thoughtful, professional and clear from the first reply.</p>
+                            </article>
+                            <article>
+                                <strong>Support focus</strong>
+                                <p>Administrative excellence, client care and operational consistency.</p>
+                            </article>
+                            <article>
+                                <strong>Availability</strong>
+                                <p>Remote support for founders, consultants, executives and growing teams.</p>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="contact-card reveal">
+                        <form id="contact-form" novalidate>
+                            <div class="form-row">
+                                <div class="field">
+                                    <label for="name">Full name</label>
+                                    <input id="name" name="name" type="text" class="form-input" placeholder="Your name" autocomplete="name" required>
+                                </div>
+                                <div class="field">
+                                    <label for="email">Email address</label>
+                                    <input id="email" name="email" type="email" class="form-input" placeholder="you@example.com" autocomplete="email" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="field">
+                                    <label for="company">Company or brand</label>
+                                    <input id="company" name="company" type="text" class="form-input" placeholder="Business name">
+                                </div>
+                                <div class="field">
+                                    <label for="service">Primary support needed</label>
+                                    <select id="service" name="service" class="form-input" required>
+                                        <option value="">Select an area</option>
+                                        <option value="Inbox and calendar support">Inbox and calendar support</option>
+                                        <option value="Client or customer support">Client or customer support</option>
+                                        <option value="Administrative operations">Administrative operations</option>
+                                        <option value="Research and reporting">Research and reporting</option>
+                                        <option value="Content coordination">Content coordination</option>
+                                        <option value="Custom support blend">Custom support blend</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <label for="timeline">When would you like support to start?</label>
+                                <input id="timeline" name="timeline" type="text" class="form-input" placeholder="For example: Immediately, next week, this month">
+                            </div>
+
+                            <div class="field">
+                                <label for="message">Project details</label>
+                                <textarea id="message" name="message" class="form-input form-input--textarea" rows="6" placeholder="Tell me about your workflow, current bottlenecks, and the tasks you want to delegate first." required></textarea>
+                            </div>
+
+                            <div class="field field--hidden" aria-hidden="true">
+                                <label for="website">Website</label>
+                                <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+                            </div>
+
+                            <button class="button button--primary button--full" type="submit" id="submit-button">
+                                <span class="button-text">Send project inquiry</span>
+                                <span class="button-loader" hidden>Sending...</span>
+                            </button>
+                            <p class="form-status" id="form-status" aria-live="polite"></p>
+                        </form>
+
+                        <div class="contact-links">
+                            <a href="mailto:hello@arojohnson.com">
+                                <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                                <span>hello@arojohnson.com</span>
+                            </a>
+                            <a href="#case-studies">
+                                <i class="fa fa-folder-open-o" aria-hidden="true"></i>
+                                <span>Review case studies before reaching out</span>
                             </a>
                         </div>
                     </div>
                 </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container footer-grid">
+                <div>
+                    <a href="#top" class="brand brand--footer">
+                        <span class="brand-mark">AJ</span>
+                        <span>
+                            <strong>Aro Johnson</strong>
+                            <small>Premium Virtual Assistant</small>
+                        </span>
+                    </a>
+                    <p>
+                        Premium virtual assistant services for founders, consultants, agencies and executives who need reliable support, polished communication and more operational breathing room.
+                    </p>
+                </div>
+
+                <div>
+                    <h3>Explore</h3>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#case-studies">Case studies</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>Support areas</h3>
+                    <ul>
+                        <li>Inbox and calendar management</li>
+                        <li>Customer and client communication</li>
+                        <li>Administrative operations</li>
+                        <li>Research and reporting</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="mailto:hello@arojohnson.com">hello@arojohnson.com</a></li>
+                        <li>Remote support across time zones</li>
+                        <li>Fast replies for qualified inquiries</li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="bg-secondary text-white py-12">
-        <div class="container mx-auto px-4 md:px-6">
-            <div class="grid md:grid-cols-4 gap-8 mb-8">
-                <div>
-                    <h3 class="text-xl font-bold mb-4">Aro Johnson</h3>
-                    <p class="text-gray-400 mb-4">Professional Virtual Assistant helping business owners reclaim their time and focus on growth.</p>
-                    <div class="flex gap-4">
-                        <a href="https://wa.me/your-number" target="_blank" class="text-gray-400 hover:text-white transition-colors"><i class="fa fa-whatsapp"></i></a>
-                        <a href="https://linkedin.com/in/arojohnson" target="_blank" class="text-gray-400 hover:text-white transition-colors"><i class="fa fa-linkedin"></i></a>
-                        <a href="https://instagram.com/arojohnson" target="_blank" class="text-gray-400 hover:text-white transition-colors"><i class="fa fa-instagram"></i></a>
-                        <a href="mailto:hello@arojohnson.com" class="text-gray-400 hover:text-white transition-colors"><i class="fa fa-envelope"></i></a>
-                    </div>
-                </div>
-
-                <div>
-                    <h4 class="font-semibold mb-4">Quick Links</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About</a></li>
-                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
-                        <li><a href="#portfolio" class="text-gray-400 hover:text-white transition-colors">Portfolio</a></li>
-                        <li><a href="#testimonials" class="text-gray-400 hover:text-white transition-colors">Testimonials</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="font-semibold mb-4">Services</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Email Management</a></li>
-                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Calendar Management</a></li>
-                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Customer Support</a></li>
-                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Administrative Support</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="font-semibold mb-4">Contact</h4>
-                    <ul class="space-y-2">
-                        <li class="text-gray-400">hello@arojohnson.com</li>
-                        <li class="text-gray-400">Available Monday - Friday</li>
-                        <li class="text-gray-400">Response within 2 hours</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
+            <div class="container footer-bottom">
                 <p>&copy; 2026 Aro Johnson. All rights reserved.</p>
+                <button class="back-to-top" id="back-to-top" type="button">Back to top</button>
             </div>
-        </div>
-    </footer>
+        </footer>
+    </div>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "ProfessionalService",
+            "name": "Aro Johnson Virtual Assistant Services",
+            "description": "Premium virtual assistant services for founders, consultants, agencies and executives including inbox management, calendar support, client communication, research and administrative operations.",
+            "serviceType": [
+                "Virtual Assistant Services",
+                "Inbox Management",
+                "Calendar Management",
+                "Administrative Support",
+                "Customer Support",
+                "Research and Reporting"
+            ],
+            "email": "hello@arojohnson.com",
+            "areaServed": "Worldwide"
+        }
+    </script>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "What kind of tasks can I delegate first?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Most clients start with inbox triage, calendar management, follow-ups, customer communication, document formatting, CRM updates, reporting and recurring admin work that steals attention from higher-value priorities."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Do you work with international clients?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. Support is remote and flexible across time zones. Communication rhythms, response windows and recurring check-ins can be adapted to suit your location and operating hours."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How do you keep communication organized?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "We align on preferred channels, recurring updates and escalation rules at the start. That keeps communication clear, reduces unnecessary pings and ensures urgent work is surfaced quickly."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Can support be customized for my business?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Absolutely. Support can be tailored around executive assistance, client support, admin operations, marketing coordination, research, reporting or a blended workflow that matches your current needs."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Is my business information kept confidential?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. Confidentiality, discretion and organized handling of sensitive information are core parts of the service. If required, non-disclosure agreements can be part of the onboarding process."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How quickly can we begin?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Once scope, priorities and communication channels are agreed, support can usually begin quickly. The first phase is focused on creating relief fast and building a repeatable rhythm from there."
+                    }
+                }
+            ]
+        }
+    </script>
 
     <script src="assets/js/main.js"></script>
-
 </body>
 </html>
