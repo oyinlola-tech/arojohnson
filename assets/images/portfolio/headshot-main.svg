@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 900" role="img" aria-labelledby="title desc">
   <title id="title">Primary headshot placeholder</title>
-  <desc id="desc">A portrait-style placeholder prepared for the owner's main headshot.</desc>
-  <rect width="720" height="900" fill="#EEF3EE"/>
-  <rect x="48" y="48" width="624" height="804" rx="42" fill="#FFFFFF" stroke="#D9E4D9" stroke-width="4"/>
-  <rect x="98" y="98" width="524" height="704" rx="34" fill="#F7FAF6"/>
-  <circle cx="360" cy="292" r="112" fill="#DDE7DE"/>
-  <path d="M248 516c28-70 91-114 112-114s84 44 112 114v152H248Z" fill="#B9CABB"/>
-  <path d="M200 726c0-90 72-162 160-162h0c88 0 160 72 160 162v76H200Z" fill="#1D6A4A" opacity="0.14"/>
-  <rect x="150" y="710" width="420" height="84" rx="18" fill="#1D6A4A" opacity="0.08"/>
-  <rect x="206" y="735" width="308" height="18" rx="9" fill="#1D6A4A" opacity="0.18"/>
-  <rect x="242" y="770" width="236" height="14" rx="7" fill="#1D6A4A" opacity="0.12"/>
+  <desc id="desc">A refined portrait placeholder prepared for the owner's main headshot.</desc>
+  <rect width="720" height="900" fill="#F8FAFC"/>
+  <rect x="50" y="50" width="620" height="800" rx="42" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="4"/>
+  <rect x="104" y="104" width="512" height="692" rx="30" fill="#F1F5F9"/>
+  <circle cx="360" cy="286" r="112" fill="#DCE6F5"/>
+  <path d="M250 514c24-70 90-114 110-114s86 44 110 114v148H250Z" fill="#B9CBE5"/>
+  <path d="M204 724c0-90 70-162 156-162h0c86 0 156 72 156 162v74H204Z" fill="#2563EB" opacity="0.12"/>
+  <rect x="150" y="706" width="420" height="88" rx="20" fill="#2563EB" opacity="0.08"/>
+  <rect x="208" y="734" width="304" height="18" rx="9" fill="#2563EB" opacity="0.18"/>
+  <rect x="246" y="770" width="228" height="14" rx="7" fill="#2563EB" opacity="0.12"/>
 </svg>

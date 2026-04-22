@@ -50,7 +50,7 @@ const setThemeUi = (theme) => {
     }
 
     if (themeColorMeta) {
-        themeColorMeta.setAttribute("content", isDark ? "#0d1711" : "#f3f5f1");
+        themeColorMeta.setAttribute("content", isDark ? "#0b1220" : "#f8fafc");
     }
 };
 
