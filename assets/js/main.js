@@ -10,6 +10,7 @@ const siteHeader = document.getElementById("site-header");
 const progressBar = document.getElementById("progress-bar");
 const backToTop = document.getElementById("back-to-top");
 const navLinks = Array.from(document.querySelectorAll(".desktop-nav a, .mobile-nav a"));
+const samePageLinks = Array.from(document.querySelectorAll('a[href^="#"]'));
 const sectionAnchors = Array.from(document.querySelectorAll("main section[id]"));
 const faqTriggers = Array.from(document.querySelectorAll(".faq-trigger"));
 const revealItems = Array.from(document.querySelectorAll(".reveal"));
@@ -23,6 +24,7 @@ const themeColorMeta = document.querySelector('meta[name="theme-color"]');
 
 const iconHref = (name) => `#${name}`;
 const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+const isHttpProtocol = window.location.protocol === "http:" || window.location.protocol === "https:";
 
 const getStoredTheme = () => {
     try {
@@ -50,7 +52,7 @@ const setThemeUi = (theme) => {
     }
 
     if (themeColorMeta) {
-        themeColorMeta.setAttribute("content", isDark ? "#0b1220" : "#f8fafc");
+        themeColorMeta.setAttribute("content", isDark ? "#2C3947" : "#E8EDF2");
     }
 };
 
@@ -143,6 +145,13 @@ const setStatusMessage = (message, type) => {
 
 const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
+if (isHttpProtocol) {
+    const manifestLink = document.createElement("link");
+    manifestLink.rel = "manifest";
+    manifestLink.href = "site.webmanifest";
+    document.head.appendChild(manifestLink);
+}
+
 applyTheme(getPreferredTheme(), false);
 
 if (themeToggle) {
@@ -175,8 +184,28 @@ if (menuToggle && mobileMenu) {
     });
 }
 
-navLinks.forEach((link) => {
-    link.addEventListener("click", () => setMenuState(false));
+samePageLinks.forEach((link) => {
+    link.addEventListener("click", (event) => {
+        const href = link.getAttribute("href") || "";
+
+        if (!href.startsWith("#")) {
+            return;
+        }
+
+        const target = document.querySelector(href);
+
+        if (!target) {
+            return;
+        }
+
+        event.preventDefault();
+        setMenuState(false);
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+
+        if (isHttpProtocol && window.history?.replaceState) {
+            window.history.replaceState(null, "", href);
+        }
+    });
 });
 
 window.addEventListener("scroll", () => {

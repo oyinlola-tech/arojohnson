@@ -3,8 +3,8 @@
   "short_name": "Aro Johnson",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#f8fafc",
-  "theme_color": "#2563eb",
+  "background_color": "#E8EDF2",
+  "theme_color": "#547A95",
   "icons": [
     {
       "src": "/favicon.svg",
